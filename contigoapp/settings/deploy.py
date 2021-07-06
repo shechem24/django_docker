@@ -23,20 +23,13 @@ ALLOWED_HOSTS = ["*"]   # "*" 모든 경로에서 접속 가능
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'django',                   # schema
-#         'USER': 'django',
-#         'PASSWORD': 'password1234',
-#         'HOST': 'mariadb',                  # 컨테이너에서 생성한 mariadb 이름
-#         'PORT': '3306',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django',                   # schema
+        'USER': 'django',
+        'PASSWORD': 'password1234',
+        'HOST': 'mariadb',                  # 컨테이너에서 생성한 mariadb 이름
+        'PORT': '3306',
     }
 }

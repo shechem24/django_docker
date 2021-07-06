@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<!-- WYSIWYG -->
+<script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+
+<div class="contigo_500px_div">
+    <div class="mb-4">
+        <h4>Article Create</h4>
+    </div>
+    <form action="{% url 'articleapp:create' %}" method="POST" enctype="multipart/form-data">
+        <!-- post 시, 항상 필요. 없으면 에러. 보안 관련 -->
+        {% csrf_token %}
+        <!-- 자동으로 form 생성해줌 -->
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-primary">
+    </form>
+</div>
+
+<!-- WYSIWYG -->
+<script>var editor = new MediumEditor('.editable');</script>
+
+{% endblock %}

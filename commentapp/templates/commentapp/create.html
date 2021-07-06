@@ -1,0 +1,30 @@
+<!-- article detail에서 아래에 추가 -->
+{% load bootstrap4 %}
+
+{% block content %}
+
+<div class="contigo_500px_div">
+    <div class="mb-4">
+        <h4>Comment Create</h4>
+    </div>
+    <form action="{% url 'commentapp:create' %}" method="POST">
+        <!-- post 시, 항상 필요. 없으면 에러. 보안 관련 -->
+        {% csrf_token %}
+        <!-- 자동으로 form 생성해줌 -->
+        {% bootstrap_form form %}
+
+        {% if user.is_authenticated %}
+        <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3">
+        {% else %}
+        <a href="{% url 'accountapp:login' %}?next={{ request.path }}"
+            class="btn btn-dark rounded-pill col-6 mt-3">
+            Login
+        </a>
+        {% endif %}
+        <input type="hidden" name="article_pk" value="{{ article.pk }}">
+
+    </form>
+</div>
+
+
+{% endblock %}

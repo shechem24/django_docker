@@ -1,0 +1,23 @@
+<!-- html 뼈대 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<!-- head 추가 -->
+{% include 'head.html' %}
+<body style="font-family: 'NanumSquareR';">
+    
+    <!-- header 추가(공통) -->
+    {% include 'header.html' %}
+
+    <hr>
+    <!-- block: 여러 앱에서 따로 사용(개별) -->
+    {% block content %}
+    {% endblock %}
+
+    <hr>
+    <!-- footer 추가(공통) -->
+    {% include 'footer.html' %}
+
+</body>
+</html>

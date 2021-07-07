@@ -56,7 +56,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django',
-        'USER': 'django',
+        # 'USER': 'django',
         'PASSWORD': 'password1234',
         'HOST': 'mariadb',                  # 컨테이너에서 생성한 mariadb 이름
         'PORT': '3306',

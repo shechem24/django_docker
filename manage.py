@@ -6,7 +6,7 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'contigoapp.settings.local')    # settings 경로 다시 지정
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'contigoapp.settings')    # settings 경로 다시 지정
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

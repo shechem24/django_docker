@@ -16,22 +16,41 @@ env = environ.Env(
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+
 
 ALLOWED_HOSTS = ["*"]   # "*" 모든 경로에서 접속 가능
+
+
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = False
+
+# # Database
+# # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'django',
+#         'USER': 'django',
+#         'PASSWORD': 'password1234',
+#         'HOST': 'mariadb',                  # 컨테이너에서 생성한 mariadb 이름
+#         'PORT': '3306',
+#     }
+# }
+
+
+### TEST ###
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django',
-        'USER': 'django',
-        'PASSWORD': 'password1234',
-        'HOST': 'mariadb',                  # 컨테이너에서 생성한 mariadb 이름
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+

@@ -23,4 +23,6 @@ EXPOSE 8000
 CMD ["bash", "-c", "python manage.py migrate --settings=contigoapp.settings.deploy && gunicorn --env DJANGO_SETTINGS_MODULE=contigoapp.settings.deploy contigoapp.wsgi --bind 0.0.0.0:8000"]
 
 
+CMD ["gunicorn", "contigoapp.wsgi", "--bind", "0.0.0.0:8000"]
+CMD ["bash", "-c", "gunicorn contigoapp.wsgi --bind 0.0.0.0:8000"]
 

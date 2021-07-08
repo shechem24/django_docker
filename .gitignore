@@ -89,6 +89,8 @@ media/
 Dockerfile
 
 nginx.conf
-backeup
+backeup.txt
 
 noig
+
+docker-compose.yml
